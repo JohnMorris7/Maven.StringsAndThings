@@ -15,7 +15,15 @@ public class StringsAndThings {
      *           countYZ("day fyyyz"); // Should return 2
      */
     public Integer countYZ(String input){
-        return null;
+        int counter = 0;
+        String [] words = input.split(" ");
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].endsWith("y") || words[i].endsWith("z")){
+                counter++;
+            }
+
+        }
+        return counter;
     }
 
     /**
@@ -28,7 +36,9 @@ public class StringsAndThings {
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
     public String removeString(String base, String remove){
-        return null;
+        String a = base + remove;
+        a = (a.replace(remove,""));
+        return a;
     }
 
     /**
@@ -40,7 +50,15 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
     public Boolean containsEqualNumberOfIsAndNot(String input){
-        return null;
+        int value = (input.split("is", - 1).length) - 1;
+        int valueNot = (input.split("not", - 1).length) - 1;
+        if (value == valueNot){
+            return true;
+        }else{
+            return false;
+        }
+
+
     }
 
     /**
@@ -50,10 +68,13 @@ public class StringsAndThings {
      *           gHappy("xxgxx") // Should return  false
      *           gHappy("xxggyygxx") // Should return  false
      */
-    public Boolean gIsHappy(String input){
-        return null;
+    public Boolean gIsHappy(String input) {
+        if (input.contains("gg")) {
+            return true;
+        } else {
+            return false;
+        }
     }
-
 
     /**
      * We'll say that a "triple" in a string is a char appearing three times in a row.
@@ -63,6 +84,16 @@ public class StringsAndThings {
      *            countTriple("a") // Should return 0
      */
     public Integer countTriple(String input){
-        return null;
+        int counter = 0;
+        char triple = 0;
+        for (int i = 0; i < input.length() - 1; i++) {
+            triple = input.charAt(i);
+            if(triple == input.charAt(i + 1)&& triple == input.charAt(i + 2)){
+                counter ++;
+
+            }
+
+        }
+        return counter;
     }
 }
